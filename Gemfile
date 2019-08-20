@@ -40,9 +40,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background.
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Solution for hellfishg
-  gem 'rubocop-rails'
-  # Static code analyzer and code formatter
+  # Automatic Rails code style checking tool.
+  gem 'rubocop-rails', '~> 2.3.0'
+  # Static code analyzer and code formatter.
   gem 'rubocop', require: false
 end
 
