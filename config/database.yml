@@ -8,8 +8,8 @@ default: &default
 development:
   <<: *default
   database: WbooksApi_development
-  username: wbook_api
-  password: wbook_api
+  username: wbooks-api
+  password: wbooks-api
 
 test:
   <<: *default
@@ -17,11 +17,11 @@ test:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: wbook_api
-  password: wbook_api
+  username: wbooks-api
+  password: wbooks-api
 
 production:
   <<: *default
   database: WbooksApi_production
-  username: wbook_api
+  username: wbooks-api
   password: <%= ENV['WBOOKSAPI_DATABASE_PASSWORD'] %>
