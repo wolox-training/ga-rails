@@ -8,10 +8,8 @@ Style/FrozenStringLiteralComment:
  Enabled: false
 AllCops:
   Exclude:
-   - 'bin/bundle'
-   - 'config/environments/*'
-   - 'db/*'
+   - 'bin/**/*'
+   - 'config/**/*'
+   - 'db/**/*'
    - 'node_modules/node-sass/src/libsass/contrib/*'
    - 'node_modules/node-sass/src/libsass/*'
-   - 'test/channels/application_cable/connection_test.rb'
-   - 'test/test_helper.rb'
