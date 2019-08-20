@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.com/wolox-training/ga-rails.svg?branch=travisCI)](https://travis-ci.com/wolox-training/ga-rails)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
