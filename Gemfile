@@ -42,7 +42,7 @@ group :development do
   # Automatic Rails code style checking tool.
   gem 'rubocop-rails', '~> 2.3.0'
   # Static code analyzer and code formatter.
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.74.0'
 end
 
 group :test do

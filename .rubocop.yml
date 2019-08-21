@@ -11,5 +11,3 @@ AllCops:
    - 'bin/**/*'
    - 'config/**/*'
    - 'db/**/*'
-   - 'node_modules/node-sass/src/libsass/contrib/*'
-   - 'node_modules/node-sass/src/libsass/*'
