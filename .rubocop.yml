@@ -1,0 +1,13 @@
+require:
+ rubocop-rails
+Documentation:
+ Enabled: false
+LineLength:
+ Max: 99
+Style/FrozenStringLiteralComment:
+ Enabled: false
+AllCops:
+  Exclude:
+   - 'bin/**/*'
+   - 'config/**/*'
+   - 'db/**/*'
