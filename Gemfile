@@ -43,6 +43,8 @@ group :development do
   gem 'rubocop-rails', '~> 2.3.0'
   # Static code analyzer and code formatter.
   gem 'rubocop', '~> 0.74.0'
+  
+  gem 'devise_token_auth'
 end
 
 group :test do
