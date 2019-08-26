@@ -43,6 +43,8 @@ group :development do
   gem 'rubocop-rails', '~> 2.3.0'
   # Static code analyzer and code formatter.
   gem 'rubocop', '~> 0.74.0'
+  # Simple, multi-client and secure token-based authentication for Rails.
+  gem 'devise_token_auth', '1.1.0'
 end
 
 group :test do
