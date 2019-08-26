@@ -6,11 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
-  validates :genre,
-            :author,
-            :image,
-            :title,
-            :publisher,
-            :year,
-            presence: true
+
+  validates :first_name, :last_name, presence: true
+
 end
