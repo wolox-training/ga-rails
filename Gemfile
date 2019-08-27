@@ -57,6 +57,8 @@ group :test do
   gem 'webdrivers'
   # Database Cleaner is a set of gems containing strategies for cleaning your database in Ruby.
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
+  # Gem library that generates fake data.
+  gem 'faker', '~> 2.1', '>= 2.1.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

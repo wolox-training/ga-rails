@@ -1,11 +1,18 @@
 require 'rails_helper'
 require 'database_cleaner'
+require 'faker'
 require 'active_record'
 
+
 RSpec.describe Book, type: :model do
+  # let(:params) do
+  #   { genre: 'Horror', author: 'Ann Rice', image: 'asd.png',
+  #     title: 'Vampire', publisher: 'Edit. Norma', year: '1996' }
+  # end
+
   let(:params) do
-    { genre: 'Horror', author: 'Ann Rice', image: 'asd.png',
-      title: 'Vampire', publisher: 'Edit. Norma', year: '1996' }
+    { genre: Faker::Name.name, author: Faker::TvShows::StarTrek.character, image:Faker::Name.name,
+        title: Faker::Name.name, publisher: Faker::Name.name, year: Faker::Name.name}
   end
 
   context 'Validate tests:' do
