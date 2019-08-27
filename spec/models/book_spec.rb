@@ -1,8 +1,7 @@
 require 'rails_helper'
-require 'database_cleaner'
-require 'faker'
-require 'active_record'
-
+# require 'active_record'
+# require 'database_cleaner'
+# require 'faker'
 
 RSpec.describe Book, type: :model do
   # let(:params) do
@@ -13,6 +12,17 @@ RSpec.describe Book, type: :model do
   let(:params) do
     { genre: Faker::Name.name, author: Faker::TvShows::StarTrek.character, image:Faker::Name.name,
         title: Faker::Name.name, publisher: Faker::Name.name, year: Faker::Name.name}
+  end
+
+  context 'Validate gems config' do
+    it 'Faker?' do
+      ran_str = Faker::Name.name
+      expect(ran_str).to be_a(String)
+    end
+    it 'Factory_bot?' do
+      fac_bot = create(:book)
+      expect(fac_bot).to be_a(Book)
+    end
   end
 
   context 'Validate tests:' do

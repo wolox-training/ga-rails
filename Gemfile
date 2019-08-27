@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rubocop', '~> 0.74.0'
   # Testing framework to Ruby on Rails as a drop-in alternative to its default testing framework
   gem 'rspec-rails', '~> 3.8'
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot', '~> 5.0', '>= 5.0.2'
 end
 
 group :development do
