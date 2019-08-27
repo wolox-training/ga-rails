@@ -39,7 +39,7 @@ group :development, :test do
   # Testing framework to Ruby on Rails as a drop-in alternative to its default testing framework
   gem 'rspec-rails', '~> 3.8'
   # A library for setting up Ruby objects as test data.
-  gem 'factory_bot', '~> 5.0', '>= 5.0.2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
