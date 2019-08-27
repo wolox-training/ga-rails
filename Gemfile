@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# Simple, multi-client and secure token-based authentication for Rails.
+gem 'devise_token_auth', '1.1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -30,6 +32,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Automatic Rails code style checking tool.
+  gem 'rubocop-rails', '~> 2.3.0'
+  # Static code analyzer and code formatter.
+  gem 'rubocop', '~> 0.74.0'
   # the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest.
   gem 'rspec-rails', '~> 3.8'
 end
@@ -41,12 +47,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background.
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Automatic Rails code style checking tool.
-  gem 'rubocop-rails', '~> 2.3.0'
-  # Static code analyzer and code formatter.
-  gem 'rubocop', '~> 0.74.0'
-  # Simple, multi-client and secure token-based authentication for Rails.
-  gem 'devise_token_auth', '1.1.0'
 end
 
 group :test do
