@@ -36,7 +36,7 @@ group :development, :test do
   gem 'rubocop-rails', '~> 2.3.0'
   # Static code analyzer and code formatter.
   gem 'rubocop', '~> 0.74.0'
-  # the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest.
+  # Testing framework to Ruby on Rails as a drop-in alternative to its default testing framework
   gem 'rspec-rails', '~> 3.8'
 end
 
@@ -55,6 +55,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Database Cleaner is a set of gems containing strategies for cleaning your database in Ruby.
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
