@@ -1,11 +1,10 @@
-# 
-# FactoryBot.define do
-#   factory :book do
-#     genre {Faker::Name.name}
-#     author {Faker::Name.name}
-#     image {Faker::Name.name}
-#     title {Faker::Name.name}
-#     publisher {Faker::Name.name}
-#     year {Faker::Name.name}
-#   end
-# end
+FactoryBot.define do
+  factory :book do
+    genre { Faker::Book.genre }
+    author { Faker::Book.author }
+    image { Faker::File.file_name(dir: 'path/to') }
+    title { Faker::Book.title }
+    publisher { Faker::Book.publisher }
+    year { Faker::Number.number(digits: 4) }
+  end
+end
