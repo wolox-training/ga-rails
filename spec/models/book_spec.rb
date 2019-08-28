@@ -1,17 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe Book, type: :model do
-  subject { build(:book) }
-  params = nil
+RSpec.describe Book do
+  invalid_params = %i[genre author image title publisher year]
 
-  context 'validate tests:' do
-    it 'require params' do
-      book = Book.new(params).save
-      expect(book).to eq(false)
+  invalid_params.each do |key, val|
+    context "should need only #{key}?" do
+      subject(:book) { build(:book, key => val) }
+      it 'require more params' do
+        expect(book.save).to eq(false)
+      end
     end
-
-    it 'should save successfully' do
-      expect(subject.save).to eq(true)
+  end
+  context 'with all parameters' do
+    subject(:book) { build(:book) }
+    it 'is successfully created' do
+      expect(book.save).to eq(true)
     end
   end
 end

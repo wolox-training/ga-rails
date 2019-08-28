@@ -38,8 +38,10 @@ group :development, :test do
   gem 'rubocop', '~> 0.74.0'
   # Testing framework to Ruby on Rails as a drop-in alternative to its default testing framework
   gem 'rspec-rails', '~> 3.8'
+  # Gem library that generates fake data.
+  gem 'faker', '~> 2.1', '>= 2.1.2'
   # A library for setting up Ruby objects as test data.
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
 end
 
 group :development do
@@ -59,8 +61,6 @@ group :test do
   gem 'webdrivers'
   # Database Cleaner is a set of gems containing strategies for cleaning your database in Ruby.
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
-  # Gem library that generates fake data.
-  gem 'faker', '~> 2.1', '>= 2.1.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
