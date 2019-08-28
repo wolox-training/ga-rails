@@ -31,6 +31,7 @@ before_install:
 
 script:
   - bundle exec rubocop app --format simple
+  - bundle exec rspec
 
 cache:
   bundler: true
