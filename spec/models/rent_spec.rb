@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Rent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe Rent do
+  subject(:rent) { build(:rent) }
+  it { is_expected.to be_valid }
+  it 'saraza' do
+    byebug
+  end
 end

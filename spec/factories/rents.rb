@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :rent do
-    user { nil }
-    book { nil }
-    rent_in { "2019-08-30" }
-    rent_out { "2019-08-30" }
+    user { build(:user) }
+    book { build(:book) }
+    rent_in { DateTime.now.to_date }
+    rent_out { Faker::Date.forward(days: 60) }
   end
 end
