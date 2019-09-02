@@ -6,4 +6,6 @@ class Book < ApplicationRecord
             :publisher,
             :year,
             presence: true
+
+  validates :title, length: { maximum: 25 }
 end
