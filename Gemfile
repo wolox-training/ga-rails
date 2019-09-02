@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 # Simple, multi-client and secure token-based authentication for Rails.
 gem 'devise_token_auth', '1.1.0'
+#ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
+gem 'active_model_serializers', '~> 0.10.10'
+#WorPaginate that simplifies pagination, for controller methods, while standardizing JSON output for APIs.
+#gem 'wor-paginate', '~> 0.1.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
