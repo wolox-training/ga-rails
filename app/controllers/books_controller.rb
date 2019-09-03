@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!
-
   def show
     render json: Book.find(book_id), serializer: BookSerializer
   end
