@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    render_paginated json: Book.all, each_serializer: BookSerializer
+    render json: Book.all, each_serializer: BookSerializer
   end
 
   private

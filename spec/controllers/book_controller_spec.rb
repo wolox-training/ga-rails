@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BooksController, type: :controller do
-
+RSpec.describe BooksController do
   it 'responds with 200 status' do
     expect(response).to have_http_status(:ok)
   end
