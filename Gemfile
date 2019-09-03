@@ -28,7 +28,7 @@ gem 'devise_token_auth', '1.1.0'
 # ActiveModelSerializers allows you to generate your JSON in an object-oriented.
 gem 'active_model_serializers', '~> 0.10.10'
 # WorPaginate simplifies pagination, for controller methods, standardizing JSON output for APIs.
-# gem 'wor-paginate', '~> 0.1.4' #FIX THIS :P
+# gem 'wor-paginate', '~> 0.1.4' # TODO: we are going to install it in next PR
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
