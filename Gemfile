@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0.rc2'
+gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+# gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -28,7 +28,7 @@ gem 'devise_token_auth', '1.1.0'
 # ActiveModelSerializers allows you to generate your JSON in an object-oriented.
 gem 'active_model_serializers', '~> 0.10.10'
 # WorPaginate simplifies pagination, for controller methods, standardizing JSON output for APIs.
-# gem 'wor-paginate', '~> 0.1.4' # TODO: we are going to install it in next PR
+gem 'wor-paginate', '~> 0.1.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -51,7 +51,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
+  # gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background.
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
