@@ -1,10 +1,10 @@
 class Book < ApplicationRecord
   validates :genre,
             :author,
-            :image,
             :title,
             :publisher,
             :year,
+            :image,
             presence: true
 
   validates :title, length: { maximum: 25 }

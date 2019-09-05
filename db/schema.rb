@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2019_09_02_144027) do
   create_table "books", force: :cascade do |t|
     t.string "genre", null: false
     t.string "author", null: false
-    t.string "image", null: false
     t.string "title", limit: 25, null: false
     t.string "publisher", null: false
     t.string "year", null: false
+    t.string "image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
