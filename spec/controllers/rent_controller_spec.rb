@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RentsController do
+<<<<<<< HEAD
   describe 'POST #create' do
     context 'When create rent' do
       include_context 'with authenticated user'
@@ -38,4 +39,6 @@ RSpec.describe RentsController do
       it { is_expected.to have_http_status(200) }
     end
   end
+=======
+>>>>>>> 76f7f49... Prototype rents routes.
 end
