@@ -1,4 +1,4 @@
-class CreateRents < ActiveRecord::Migration[6.0]
+class CreateRents < ActiveRecord::Migration[5.1]
   def change
     create_table :rents do |t|
       t.references :user, null: false, foreign_key: true

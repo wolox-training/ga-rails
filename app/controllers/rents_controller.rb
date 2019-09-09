@@ -1,12 +1,18 @@
 class RentsController < ApplicationController
   def create
-    rent_in { DateTime.now.to_date }
-    rent_out { Faker::Date.forward(days: 60) }
+    # rent_in { DateTime.now.to_date }
+    # rent_out { Faker::Date.forward(days: 60) }
 
-    DateTime.now.to_date = :rent_in
-    DateTime.now.to_date + 10.days = :rent_out
+    # DateTime.now.to_date = :rent_in
+    # DateTime.now.to_date + 10.days = :rent_out
 
-    rent = Rent.new(params[:user], params[:book], :rent_in, :rent_out)
+    rent_now = DateTime.now.to_date
+    rent_finish = rent_now + 10.days
+
+    rent_params = { user_id: params[:user], book_id: params[:book],
+                    rent_in: rent_now, rent_out: rent_finish }
+
+    rent = Rent.new(rent_params)
 
     if rent.save
       render json: rent, serializer: RentSerializer

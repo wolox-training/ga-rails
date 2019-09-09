@@ -1,4 +1,4 @@
-class RemoveImageAndNicknameAndNameFromUsers < ActiveRecord::Migration[6.0]
+class RemoveImageAndNicknameAndNameFromUsers < ActiveRecord::Migration[5.1]
   def change
 
     remove_column :users, :image, :string
