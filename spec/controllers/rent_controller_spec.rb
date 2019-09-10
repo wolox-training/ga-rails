@@ -12,34 +12,25 @@ RSpec.describe RentsController do
       let!(:rent) { create(:rent) }
       subject!(:http_response) do
         post :create, params: {
-          user: rent.user, book: rent.book
+          user: rent.user, book: rent.book, rent_in: rent.rent_in, rent_out: rent.rent_out
         }
       end
 
-      it 'with a paginated json' do
+      it 'rent created successfully' do
         expect(JSON.parse(http_response.body).to_json).to eq RentSerializer.new(rent).to_json
       end
 
-      it { should have_http_status(200) }
+      it { should have_http_status(201) }
     end
   end
 
   describe 'GET #index' do
-    context 'route check' do
-      it { should route(:get, '/rents').to(action: :index) }
-    end
-
-    context 'without authenticated user' do
-      subject(:http_request) { get :index }
-      it { should have_http_status(:unauthorized) }
-    end
-
     context 'When you look a book with correct id' do
       include_context 'with authenticated user'
       let!(:rent) { create(:rent) }
       subject!(:http_response) { get :index, params: { user_id: rent.user_id } }
 
-      it 'with answers in json' do
+      it 'with correct answers in json' do
         expect(JSON.parse(http_response.body).to_json) =~ RentSerializer.new(rent).to_json
       end
 
