@@ -2,6 +2,7 @@ class RentsController < ApplicationController
   def create
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rent = Rent.new(rent_params)
 
     if rent.save
@@ -19,6 +20,8 @@ class RentsController < ApplicationController
     # DateTime.now.to_date = :rent_in
     # DateTime.now.to_date + 10.days = :rent_out
 
+=======
+>>>>>>> 3b6b8a2... Crete test #index for rents
     rent_now = DateTime.now.to_date
     rent_finish = rent_now + 10.days
 
@@ -37,6 +40,7 @@ class RentsController < ApplicationController
 
   def index
 <<<<<<< HEAD
+<<<<<<< HEAD
     render_paginated Rent.where(user_id: user_id),
                      each_serializer: RentSerializer
   end
@@ -51,6 +55,13 @@ def user_id
 =======
     render_paginated Rent.find(user_id), serializer: UserRentsSerializer
     # TODO: crear un test de prueba.
+=======
+    if render_paginated json: Rent.find_by(user_id: params[:user_id]),
+                        each_serializer: RentSerializer
+    else
+      render plain: 'No rents for this user ID', status: :unprocessable_entity
+    end
+>>>>>>> 3b6b8a2... Crete test #index for rents
   end
 
   private

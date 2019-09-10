@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :books, only: %i[index show]
-  resources :rents, only: %i[create index]
+  resources :rents, only: %i[index create]
+
+  resources :users, only:[] do
+   resources :rents, only: %i[index]
+  end
 
   resources :users, only:[] do
    resources :rents, only: %i[index create]

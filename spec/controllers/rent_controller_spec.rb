@@ -43,11 +43,17 @@ RSpec.describe RentsController do
       it 'with a paginated json' do
         expect(JSON.parse(http_response.body).to_json).to eq RentSerializer.new(rent).to_json
       end
+<<<<<<< HEAD
 >>>>>>> 65452d5... Create test POST #create for rents
+=======
+
+      it { should have_http_status(200) }
+>>>>>>> 3b6b8a2... Crete test #index for rents
     end
   end
 
   describe 'GET #index' do
+<<<<<<< HEAD
 <<<<<<< HEAD
     context 'When you look a book with correct id' do
       include_context 'with authenticated user'
@@ -65,6 +71,9 @@ RSpec.describe RentsController do
 >>>>>>> 76f7f49... Prototype rents routes.
 =======
     context 'GET routes checks' do
+=======
+    context 'route check' do
+>>>>>>> 3b6b8a2... Crete test #index for rents
       it { should route(:get, '/rents').to(action: :index) }
     end
 
@@ -76,11 +85,13 @@ RSpec.describe RentsController do
     context 'When you look a book with correct id' do
       include_context 'with authenticated user'
       let!(:rent) { create(:rent) }
-      # subject!(:http_response) { get :index, params: { id: 1} }
+      subject!(:http_response) { get :index, params: { user_id: rent.user_id } }
 
       it 'with answers in json' do
-        # expect(JSON.parse(http_response.body).to_json).to eq RentSerializer.new(rent).to_json
+        expect(JSON.parse(http_response.body).to_json) =~ RentSerializer.new(rent).to_json
       end
+
+      it { should have_http_status(200) }
     end
   end
 >>>>>>> 65452d5... Create test POST #create for rents
