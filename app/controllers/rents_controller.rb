@@ -1,11 +1,5 @@
 class RentsController < ApplicationController
   def create
-    # rent_in { DateTime.now.to_date }
-    # rent_out { Faker::Date.forward(days: 60) }
-
-    # DateTime.now.to_date = :rent_in
-    # DateTime.now.to_date + 10.days = :rent_out
-
     rent_now = DateTime.now.to_date
     rent_finish = rent_now + 10.days
 
@@ -22,8 +16,11 @@ class RentsController < ApplicationController
   end
 
   def index
-    render_paginated Rent.find(user_id), serializer: UserRentsSerializer
-    # TODO: crear un test de prueba.
+    if render_paginated json: Rent.find_by(user_id: params[:user_id]),
+                        each_serializer: RentSerializer
+    else
+      render plain: 'No rents for this user ID', status: :unprocessable_entity
+    end
   end
 
   private
