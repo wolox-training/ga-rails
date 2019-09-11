@@ -5,7 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 require 'factory_bot_rails'
-
-books_list = FactoryBot::create_list(:book, 5000)
+FactoryBot.create_list(:book, 5000)
