@@ -2,22 +2,21 @@ require 'rails_helper'
 
 RSpec.describe RentsController do
   describe 'POST #create' do
-    context 'without authenticated user' do
-      subject(:http_request) { post :create }
-      it { should have_http_status(:unauthorized) }
-    end
-
     context 'When create rent' do
       include_context 'with authenticated user'
-      let!(:rent) { create(:rent) }
+      let!(:rentParams) { attributes_for(:rent) }
+      let!(:userParams) { create(:user) }
+      let!(:bookParams) { create(:book) }
+
+      # /users/:user_id/rents
       subject!(:http_response) do
-        post :create, params: {
-          user: rent.user, book: rent.book, rent_in: rent.rent_in, rent_out: rent.rent_out
-        }
+        post :create, params: { user_id: userParams[:id], user: userParams[:id],
+                                book: bookParams[:id], rent_in: rentParams[:rent_in],
+                                rent_out: rentParams[:rent_out] }
       end
 
       it 'rent created successfully' do
-        expect(JSON.parse(http_response.body).to_json).to eq RentSerializer.new(rent).to_json
+        expect(JSON.parse(http_response.body).to_json).to eq RentSerializer.new(Rent.last).to_json
       end
 
       it { should have_http_status(201) }

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   resources :books, only: %i[index show]
-  resources :rents, only: %i[create]
 
   resources :users, only:[] do
-   resources :rents, only: %i[index]
+   resources :rents, only: %i[index create]
   end
 
   mount_devise_token_auth_for 'User', at: 'auth'

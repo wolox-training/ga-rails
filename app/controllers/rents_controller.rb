@@ -13,7 +13,7 @@ class RentsController < ApplicationController
   end
 
   def index
-    render_paginated json: Rent.find_by(user_id: params[:user_id]),
-                                          each_serializer: RentSerializer
+    render_paginated json: Rent.where(user_id: params[:user_id]),
+                     each_serializer: RentSerializer
   end
 end
