@@ -1,6 +1,7 @@
 class RentSerializer < ActiveModel::Serializer
-  attributes :user,
-             :book,
-             :rent_in,
+  attributes :rent_in,
              :rent_out
+
+  belongs_to :user
+  belongs_to :book
 end

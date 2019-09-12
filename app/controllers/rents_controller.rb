@@ -1,8 +1,5 @@
 class RentsController < ApplicationController
   def create
-    rent_params = { user_id: params[:user], book_id: params[:book],
-                    rent_in: params[:rent_in], rent_out: params[:rent_out] }
-
     rent = Rent.new(rent_params)
 
     if rent.save
@@ -13,7 +10,17 @@ class RentsController < ApplicationController
   end
 
   def index
-    render_paginated json: Rent.where(user_id: params[:user_id]),
+    render_paginated Rent.where(user_id: user_id),
                      each_serializer: RentSerializer
   end
+end
+
+private
+
+def rent_params
+  params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
+end
+
+def user_id
+  params.require(:user_id)
 end
