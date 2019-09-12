@@ -5,7 +5,7 @@ class RentsController < ApplicationController
     if rent.save
       render json: rent, serializer: RentSerializer, status: :created
     else
-      render json: rent.errors, status: :not_acceptable
+      render json: rent.errors, status: :bad_request
     end
   end
 
