@@ -29,7 +29,7 @@ RSpec.describe BooksController do
         expect(http_response.body) =~ JSON.parse(expected)
       end
 
-      it { should have_http_status(200) }
+      it { is_expected.to have_http_status(200) }
     end
   end
 
@@ -47,7 +47,7 @@ RSpec.describe BooksController do
         expect(JSON.parse(http_response.body).to_json).to eq BookSerializer.new(book).to_json
       end
 
-      it { should have_http_status(200) }
+      it { is_expected.to have_http_status(200) }
     end
   end
 end
