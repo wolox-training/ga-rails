@@ -14,9 +14,7 @@ class RentsController < ApplicationController
                      each_serializer: RentSerializer
   end
 end
-
 private
-
 def rent_params
   params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
 end
