@@ -21,15 +21,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
 # Simple, multi-client and secure token-based authentication for Rails.
 gem 'devise_token_auth', '1.1.0'
 # ActiveModelSerializers allows you to generate your JSON in an object-oriented.
 gem 'active_model_serializers', '~> 0.10.10'
 # WorPaginate simplifies pagination, for controller methods, standardizing JSON output for APIs.
 gem 'wor-paginate', '~> 0.1.4'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+# Object oriented authorization for Rails applications
+gem 'pundit', '~> 2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

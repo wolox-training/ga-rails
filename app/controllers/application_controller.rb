@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   include Wor::Paginate
   before_action :authenticate_user!, unless: :devise_controller?
   include DeviseTokenAuth::Concerns::SetUserByToken
