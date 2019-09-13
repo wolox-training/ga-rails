@@ -28,11 +28,11 @@ RSpec.describe RentsController do
   describe 'GET #index' do
     context 'When you look a book with correct id' do
       include_context 'with authenticated user'
-      let!(:rents) { create(:rent, user_id: current_user.id) }
+      let!(:rent) { create(:rent, user_id: current_user.id) }
       subject(:http_response) { get :index, params: { user_id: current_user.id } }
 
       it 'with correct answers in json' do
-        expect(http_response.body) =~ RentSerializer.new(rents)
+        expect(http_response.body) =~ RentSerializer.new(rent)
       end
 
       it { is_expected.to have_http_status(200) }
