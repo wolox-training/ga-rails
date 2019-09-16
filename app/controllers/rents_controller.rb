@@ -11,17 +11,13 @@ class RentsController < ApplicationController
   end
 
   def index
-    rent = Rent.includes(:user, :book).where(user_id: user_id)
-    authorize rent
-    render_paginated rent,
+    render_paginated policy_scope(Rent),
                      each_serializer: RentSerializer
   end
-end
-private
-def rent_params
-  params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
-end
 
-def user_id
-  params.require(:user_id)
+  private
+
+  def rent_params
+    params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
+  end
 end
