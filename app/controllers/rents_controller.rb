@@ -1,6 +1,7 @@
 class RentsController < ApplicationController
   def create
     rent = Rent.new(rent_params)
+    authorize rent
 
     if rent.save
       render json: rent, serializer: RentSerializer, status: :created
@@ -10,15 +11,13 @@ class RentsController < ApplicationController
   end
 
   def index
-    render_paginated Rent.where(user_id: user_id),
+    render_paginated policy_scope(Rent),
                      each_serializer: RentSerializer
   end
-end
-private
-def rent_params
-  params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
-end
 
-def user_id
-  params.require(:user_id)
+  private
+
+  def rent_params
+    params.require(:rent).permit(:user_id, :book_id, :rent_in, :rent_out)
+  end
 end

@@ -5,16 +5,16 @@ RSpec.describe RentsController do
     context 'When create rent' do
       include_context 'with authenticated user'
       let(:rentParams) { attributes_for(:rent) }
-      let(:userParams) { create(:user) }
       let(:bookParams) { create(:book) }
 
       # /users/:user_id/rents
       subject(:http_response) do
-        post :create, params: { user_id: userParams[:id],
-                                rent: { user_id: userParams[:id],
-                                        book_id: bookParams[:id],
-                                        rent_in: rentParams[:rent_in],
-                                        rent_out: rentParams[:rent_out] } }
+        post :create,
+             params: { user_id: current_user.id,
+                       rent: { user_id: current_user.id,
+                               book_id: bookParams[:id],
+                               rent_in: rentParams[:rent_in],
+                               rent_out: rentParams[:rent_out] } }
       end
 
       it 'creates the rent successfully' do
@@ -28,8 +28,8 @@ RSpec.describe RentsController do
   describe 'GET #index' do
     context 'When you look a book with correct id' do
       include_context 'with authenticated user'
-      let(:rent) { create(:rent) }
-      subject!(:http_response) { get :index, params: { user_id: rent.user_id } }
+      let!(:rent) { create(:rent, user_id: current_user.id) }
+      subject(:http_response) { get :index, params: { user_id: current_user.id } }
 
       it 'with correct answers in json' do
         expect(http_response.body) =~ RentSerializer.new(rent)
