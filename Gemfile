@@ -31,6 +31,8 @@ gem 'active_model_serializers', '~> 0.10.10'
 gem 'wor-paginate', '~> 0.1.4'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 2.1'
+# Makes consuming restful web services dead easy.
+gem 'httparty', '~> 0.17.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
