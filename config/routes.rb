@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :books, only: %i[index show]
+  resources :books, only: %i[index show] do
+    collection do
+      get :book_information
+    end
+  end
 
   resources :users, only:[] do
    resources :rents, only: %i[index create]
