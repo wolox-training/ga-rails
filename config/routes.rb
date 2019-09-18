@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :books, only: %i[index show] do
     collection do
-      get 'book_information/:isbn', action: :book_information
+      get :book_information
     end
   end
 

@@ -8,7 +8,7 @@ class OpenLibraryBooksService
 
     book_response = self.class.get(path, options)
 
-    raise book_response.response unless response.success?
+    raise book_response.response unless book_response.success?
 
     JSON.parse(book_response.body)[isbn].deep_symbolize_keys
         .slice(:title, :subtitle, :number_of_pages, :authors)
