@@ -47,8 +47,6 @@ group :development, :test do
   gem 'faker', '~> 2.1', '>= 2.1.2'
   # A library for setting up Ruby objects as test data.
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
-  # WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
-  gem 'webmock', '~> 3.7', '>= 3.7.5'
 end
 
 group :development do
@@ -69,6 +67,8 @@ group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
+  # WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
+  gem 'webmock', '~> 3.7', '>= 3.7.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

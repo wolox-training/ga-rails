@@ -1,6 +1,6 @@
 class OpenLibraryBooksService
   include HTTParty
-  base_uri 'openlibrary.org'
+  base_uri 'https://openlibrary.org'
 
   def retrieve_book_information_by_isbn(isbn)
     path = '/api/books'
