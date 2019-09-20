@@ -67,6 +67,8 @@ group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
+  # WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
+  gem 'webmock', '~> 3.7', '>= 3.7.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
