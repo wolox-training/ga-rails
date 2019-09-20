@@ -3,55 +3,43 @@ require 'rails_helper'
 RSpec.describe OpenLibraryBooksService, type: :service do
   include WebMock::API
   describe '#retrieve_book_information' do
-    let(:path) { 'https://openlibrary.org/api/books' }
-    context 'when retrieving info on a book with valid ISBN' do
+    subject(:service) do
+      OpenLibraryBooksService.new.retrieve_book_information_by_isbn(isbn)
+    end
+    context 'when the external service responds successfully' do
+      let(:path) { 'https://openlibrary.org/api/books' }
       let(:isbn) { 'ISBN:0451526538' }
-      subject(:http_request) do
-        OpenLibraryBooksService.new.retrieve_book_information_by_isbn(isbn)
-      end
 
       before do
         retrieve_book_information_by_isbn_success
-        http_request
+        service
       end
 
-      it 'when an external request successfully' do
+      it 'makes a request with the correct path and params' do
         expect(WebMock).to have_requested(:get, path)
           .with(query: { bibkeys: isbn, format: 'json', jscmd: 'data' })
       end
 
-      it 'whe you look a book with correct data title' do
-        expect(http_request[:title]).to eq('The adventures of Tom Sawyer')
+      it 'returns a hash with the correct title' do
+        expect(service[:title]).to eq('The adventures of Tom Sawyer')
       end
     end
 
-    context 'when retrieving info not found' do
-      let!(:non_existent_isbn) { 'ISBN:9999999999' }
-      subject(:http_request) do
-        OpenLibraryBooksService.new.retrieve_book_information_by_isbn(non_existent_isbn)
-      end
+    context 'when the external service returns not found' do
+      let!(:isbn) { 'ISBN:9999999999' }
 
-      before do
+      it 'raises a Not found 404 error' do
         retrieve_book_information_no_found
-      end
-
-      it 'should respond Not found 404 code' do
-        expect { http_request }.to raise_error('Not found 404')
+        expect { service }.to raise_error('Not found 404')
       end
     end
 
-    context 'when retrieving info bad request' do
-      let!(:invalid_isbn) { 'ISBN:123' }
-      subject(:http_request) do
-        OpenLibraryBooksService.new.retrieve_book_information_by_isbn(invalid_isbn)
-      end
+    context 'when the external service returns bad request' do
+      let!(:isbn) { 'ISBN:123' }
 
-      before do
+      it 'raises a Bad request 400 error' do
         retrieving_book_information_bad_request
-      end
-
-      it 'Bad request 400' do
-        expect { http_request }.to raise_error('Bad request 400')
+        expect { service }.to raise_error('Bad request 400')
       end
     end
   end

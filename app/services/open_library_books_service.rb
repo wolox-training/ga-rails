@@ -8,13 +8,13 @@ class OpenLibraryBooksService
 
     book_response = self.class.get(path, options)
 
-    code_errors_raise?(book_response)
+    code_errors_raise(book_response)
 
     JSON.parse(book_response.body)[isbn].deep_symbolize_keys
         .slice(:title, :subtitle, :number_of_pages, :authors)
   end
 
-  def code_errors_raise?(response)
+  def code_errors_raise(response)
     raise 'Not found 404' if response.code == 404
 
     raise 'Bad request 400' if response.code == 400
@@ -22,7 +22,5 @@ class OpenLibraryBooksService
     raise 'Request timeout 408' if response.code == 408
 
     raise response.response unless response.success?
-
-    false
   end
 end
