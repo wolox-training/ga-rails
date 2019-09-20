@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 module OpenLibraryBooksServiceMock
-  include WebMock::API
-
   def retrieve_book_information_by_isbn_success
     data_body = File.read(Rails.root.join('spec',
                                           'support',
