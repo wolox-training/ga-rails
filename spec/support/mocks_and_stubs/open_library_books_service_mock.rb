@@ -16,7 +16,7 @@ module OpenLibraryBooksServiceMock
       ).to_return(status: 200, body: data_body)
   end
 
-  def retrieve_book_information_no_found
+  def retrieve_book_information_not_found
     stub_request(:get, 'https://openlibrary.org/api/books')
       .with(
         query:

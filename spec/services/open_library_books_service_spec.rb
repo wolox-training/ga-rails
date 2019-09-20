@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe OpenLibraryBooksService, type: :service do
-  include WebMock::API
   describe '#retrieve_book_information' do
     subject(:service) do
       OpenLibraryBooksService.new.retrieve_book_information_by_isbn(isbn)
@@ -26,16 +25,16 @@ RSpec.describe OpenLibraryBooksService, type: :service do
     end
 
     context 'when the external service returns not found' do
-      let!(:isbn) { 'ISBN:9999999999' }
+      let(:isbn) { 'ISBN:9999999999' }
 
       it 'raises a Not found 404 error' do
-        retrieve_book_information_no_found
+        retrieve_book_information_not_found
         expect { service }.to raise_error('Not found 404')
       end
     end
 
     context 'when the external service returns bad request' do
-      let!(:isbn) { 'ISBN:123' }
+      let(:isbn) { 'ISBN:123' }
 
       it 'raises a Bad request 400 error' do
         retrieving_book_information_bad_request
