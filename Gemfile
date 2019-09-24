@@ -15,8 +15,6 @@ gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
@@ -33,6 +31,12 @@ gem 'wor-paginate', '~> 0.1.4'
 gem 'pundit', '~> 2.1'
 # Makes consuming restful web services dead easy.
 gem 'httparty', '~> 0.17.0'
+# Simple, efficient background processing for Ruby.
+gem 'sidekiq', '5.2.7'
+# Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 4.0'
+# Loads environment variables from `.env`.
+gem 'dotenv', '~> 2.7', '>= 2.7.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
