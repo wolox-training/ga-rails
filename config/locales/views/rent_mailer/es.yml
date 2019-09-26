@@ -1,2 +1,8 @@
 es:
-  book_details: 'Datos del libro'
+  rented: 'rentado'
+  body_title: 'DETALLE DE LA RENTA:'
+  title: 'Título'
+  genre: 'Genero'
+  author: 'Autor'
+  created_rent: 'Día de la creación de la renta'
+  end_of_rent: 'Fin de la renta'

@@ -1,2 +1,8 @@
 en:
-  book_details: 'Details of your book'
+  rented: 'rented'
+  body_title: 'RENT DETAILS'
+  title: 'Title'
+  genre: 'Genre'
+  author: 'Author'
+  created_rent: 'Date of creation of the rent'
+  end_of_rent: 'End of rental'
