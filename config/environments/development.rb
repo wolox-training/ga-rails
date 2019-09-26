@@ -67,6 +67,6 @@ Rails.application.configure do
     address: Rails.application.secrets.mailer_address,
     domain: Rails.application.secrets.mailer_domain,
     port: Rails.application.secrets.mailer_port,
-    authentication: Rails.application.secrets.mailer_authentication
+    authentication: Rails.application.secrets.mailer_authentication.to_sym
   }
 end
