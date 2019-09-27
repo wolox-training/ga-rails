@@ -14,5 +14,6 @@ class RentMailer < ApplicationMailer
 
   def setting_locale(user)
     I18n.locale = user.locale.to_sym
+
   end
 end
