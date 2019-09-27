@@ -10,4 +10,14 @@ class RentMailer < ApplicationMailer
       mail(to: user.email, subject: "#{@book.title} " + I18n.t(:rented) + '!')
     end
   end
+
+  def expired_rent
+    @rent = params[:expired_rent]
+    @book = @rent.book
+    user = @rent.user
+
+    I18n.with_locale(:es) do
+      mail(to: user.email, subject: "#{@book.title} " + I18n.t(:rent_expired) + '!')
+    end
+  end
 end
