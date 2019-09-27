@@ -6,13 +6,8 @@ class RentMailer < ApplicationMailer
     @book = @rent.book
     user = @rent.user
 
-    setting_locale(user)
-    mail(to: user.email, subject: "#{@book.title} " + I18n.t(:rented) + '!')
-  end
-
-  private
-
-  def setting_locale(user)
-    I18n.locale = user.locale.to_sym
+    I18n.with_locale(user.locale.to_sym) do
+      mail(to: user.email, subject: "#{@book.title} " + I18n.t(:rented) + '!')
+    end
   end
 end
