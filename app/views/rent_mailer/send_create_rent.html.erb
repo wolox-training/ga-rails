@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>
+      <%= "RENT DETAILS:" %>
+    </h2>
+    <h3>
+      <%= "Title: #{@book.title}, genre: #{@book.genre}, Author: #{@book.author}" %>
+    </h3>
+    <h3>
+      <%= "Date of creation of the rent: #{@rent.rent_in}" %>
+    </h3>
+    <h3>
+      <%= "End of rental: #{@rent.rent_out}" %>
+    </h3>
+  </body>
+</html>
