@@ -5,16 +5,16 @@
   </head>
   <body>
     <h2>
-      <%= "RENT DETAILS:" %>
+      <%= I18n.t(:body_title) %>
     </h2>
     <h3>
-      <%= "Title: #{@book.title}, genre: #{@book.genre}, Author: #{@book.author}" %>
+      <%= I18n.t(:title) + ": #{@book.title}, " + I18n.t(:genre) + ": #{@book.genre}, " + I18n.t(:author) + ": #{@book.author}." %>
     </h3>
     <h3>
-      <%= "Date of creation of the rent: #{@rent.rent_in}" %>
+      <%= I18n.t(:created_rent) + ": #{@rent.rent_in}." %>
     </h3>
     <h3>
-      <%= "End of rental: #{@rent.rent_out}" %>
+      <%= I18n.t(:end_of_rent) + ": #{@rent.rent_out}." %>
     </h3>
   </body>
 </html>
