@@ -16,7 +16,7 @@ class RentMailer < ApplicationMailer
     @book = @rent.book
     user = @rent.user
 
-    I18n.with_locale(:es) do
+    I18n.with_locale(user.locale.to_sym) do
       mail(to: user.email, subject: "#{@book.title} " + I18n.t(:rent_expired) + '!')
     end
   end
