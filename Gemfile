@@ -39,6 +39,8 @@ gem 'redis', '~> 4.0'
 gem 'dotenv', '~> 2.7', '>= 2.7.5'
 # Job scheduling extension for Sidekiq that adds support for queueing jobs in a recurring way.
 gem 'sidekiq-scheduler', '~> 3.0'
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
+gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

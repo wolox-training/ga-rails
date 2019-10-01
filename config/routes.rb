@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  resources :book_suggestions, only: %i[create]
+
   resources :books, only: %i[index show] do
     collection do
       get :book_information
