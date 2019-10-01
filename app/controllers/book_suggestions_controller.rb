@@ -1,4 +1,6 @@
 class BookSuggestionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
+
   def create
     book_suggestion = BookSuggestion.new(book_suggestion_params)
 
