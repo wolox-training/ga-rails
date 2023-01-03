@@ -30,7 +30,7 @@ gem 'wor-paginate', '~> 0.1.4'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 2.1'
 # Makes consuming restful web services dead easy.
-gem 'httparty', '~> 0.17.0'
+gem 'httparty', '~> 0.21.0'
 # Simple, efficient background processing for Ruby.
 gem 'sidekiq', '5.2.7'
 # Use Redis adapter to run Action Cable in production
